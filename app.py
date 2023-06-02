@@ -22,7 +22,7 @@ def upload_image():
     filename=secure_filename(image_file.filename)
     image_file.save(os.path.join('static/',filename))
     image=Image.open(image_file)
-    image.thumbnail(width,height)
+    image.thumbnail((width,height)) 
     image.save('static/',filename)
     return render_template('upload.html',filename=filename)
 
